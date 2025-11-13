@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj": {}
+    "/home/wiktor/Documents/ALien/lekcja7.csproj": {}
   },
   "projects": {
-    "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj": {
+    "/home/wiktor/Documents/ALien/lekcja7.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj",
+        "projectUniqueName": "/home/wiktor/Documents/ALien/lekcja7.csproj",
         "projectName": "lekcja7",
-        "projectPath": "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj",
-        "packagesPath": "/home/marceli/.nuget/packages/",
-        "outputPath": "/home/marceli/Documents/C#/lekcja7/obj/",
+        "projectPath": "/home/wiktor/Documents/ALien/lekcja7.csproj",
+        "packagesPath": "/home/wiktor/.nuget/packages/",
+        "outputPath": "/home/wiktor/Documents/ALien/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/marceli/.nuget/NuGet/NuGet.Config"
+          "/home/wiktor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

@@ -2,15 +2,16 @@ using Avalonia.Controls.Chrome;
 
 namespace lekcja7.Models;
 
-public record Movie(
-    string TitleOriginal,
-    string TitlePolish,
-    int ReleaseDate,
-    string Director,
-    string Screenwriter,
-    string Genre,
-    int Time,
-    float Rating,
-    string[] MainCharacters,
-    string Ship
-);
+public class Movie
+{
+    public string TitleOriginal { get; set; } = "";
+    public string TitlePolish { get; set; } = "";
+    public int ReleaseDate { get; set; } = 0;
+    public string Director { get; set; } = "";
+    public string Screenwriter { get; set; } = "";
+    public string Genre { get; set; } = "";
+    public int Time { get; set; } = 0;
+    public double Rating { get; set; } = 0;
+    public string[] MainCharacters { get; set; } = [];
+    public string Ship { get; set; } = "";
+};

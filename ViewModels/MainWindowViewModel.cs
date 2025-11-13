@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Reactive;
+using System.Reactive.Linq;
 using lekcja7.Models;
 using ReactiveUI;
 
@@ -46,11 +47,5 @@ public class MainWindowViewModel : ViewModelBase
     {
         get => _selectedMovie;
         set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
-    }
-    public ReactiveCommand<Unit, Unit> ShowDetailsCommand { get; }
-
-    public MainWindowViewModel()
-    {
-        var canShow = this.WhenAnyValue(vm => vm.SelectedMovie).Select(movie => )
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using Avalonia.Controls.Chrome;
 
 namespace lekcja7.Models;

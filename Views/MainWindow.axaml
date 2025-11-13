@@ -8,4 +8,24 @@
         x:DataType="vm:MainWindowViewModel"
         Title="Aliens">
 
+        <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                        <ListBox ItemsSource="{Binding Games}">
+                                <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                                <TextBlock Text="{Binding TitlePolish}"></TextBlock>
+                                        </DataTemplate>
+                                </ListBox.ItemTemplate>
+                        </ListBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                                
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                                
+                        </StackPanel>
+                </StackPanel>
+        </StackPanel>
+        
 </Window>

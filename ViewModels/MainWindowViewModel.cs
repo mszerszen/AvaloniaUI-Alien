@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.Reactive;
 using lekcja7.Models;
+using ReactiveUI;
 
 namespace lekcja7.ViewModels;
 
@@ -22,7 +24,6 @@ public class MainWindowViewModel : ViewModelBase
             Description = "Załoga statku handlowego Nostromo odbiera sygnał z nieznanej planety.Po lądowaniu odkrywają obcą formę życia, która zaczyna eliminować członków załogi jeden po drugim.",
             FunFact = "Scena z „wyskakującym potworem” z klatki piersiowej aktora była niespodzianką dla obsady – ich reakcje są autentyczne."
         },
-        
         new Movie()
         {
             TitleOriginal = "Aliens",
@@ -38,6 +39,18 @@ public class MainWindowViewModel : ViewModelBase
             Description = "Ripley, jedyna ocalała z wcześniejszego ataku obcego, wraca z oddziałem kolonialnych marines na księżyc LV-426, by zbadać utratę kontaktu z kolonią. Wkrótce stają oko w oko z armią obcych.",
             FunFact = "James Cameron napisał scenariusz podczas lotu do Londynu, tworząc tytuł, który jest liczbą mnogą słowa „Alien” – symbolicznie zapowiadając, że tym razem potworów będzie więcej."
         }
-
     };
+    
+    private Movie? _selectedMovie;
+    public Movie? SelectedMovie
+    {
+        get => _selectedMovie;
+        set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
+    }
+    public ReactiveCommand<Unit, Unit> ShowDetailsCommand { get; }
+
+    public MainWindowViewModel()
+    {
+        var canShow = this.WhenAnyValue(vm => vm.SelectedMovie).Select(movie => )
+    }
 }

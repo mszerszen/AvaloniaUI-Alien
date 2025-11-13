@@ -14,4 +14,6 @@ public class Movie
     public double Rating { get; set; } = 0;
     public string[] MainCharacters { get; set; } = [];
     public string Ship { get; set; } = "";
+    public string Description { get; set; } = "";
+    public string FunFact { get; set; } = "";
 };

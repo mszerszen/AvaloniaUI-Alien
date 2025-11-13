@@ -12,7 +12,7 @@
                 <vm:MainWindowViewModel/>
         </Design.DataContext>
         
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                         <ListBox ItemsSource="{Binding Movies}">
                                 <ListBox.ItemTemplate>
@@ -23,10 +23,10 @@
                         </ListBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 
                         </StackPanel>
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 
                         </StackPanel>
                 </StackPanel>

@@ -1,75 +1,123 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:lekcja7.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="lekcja7.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Title="Aliens">
+        Title="Aliens"
+        Width="800" Height="600"
+        x:DataType="vm:MainWindowViewModel">
 
-        <Design.DataContext>
-                <vm:MainWindowViewModel/>
-        </Design.DataContext>
-        
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
-                        <ListBox ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}">
-                                <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                                <TextBlock Text="{Binding TitlePolish}"></TextBlock>
-                                        </DataTemplate>
-                                </ListBox.ItemTemplate>
-                        </ListBox>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                        <TextBlock Text="Szczegóły Filmu:" FontSize="30" />
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Tytuł Oryginalny: "/>
-                                <TextBlock Text="{Binding SelectedMovie.TitleOriginal}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Tytuł Polski: "/>
-                                <TextBlock Text="{Binding SelectedMovie.TitlePolish}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Rok Premiery: "/>
-                                <TextBlock Text="{Binding SelectedMovie.ReleaseDate}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Reżyser: "/>
-                                <TextBlock Text="{Binding SelectedMovie.Director}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Scenarzysta: "/>
-                                <TextBlock Text="{Binding SelectedMovie.Screenwriter}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Gatunek: "/>
-                                <TextBlock Text="{Binding SelectedMovie.Genre}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Czas Trwania: "/>
-                                <TextBlock Text="{Binding SelectedMovie.Time}" />
-								<TextBlock Text="min."/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Ocena: "/>
-                                <TextBlock Text="{Binding SelectedMovie.Rating}" />
-								<TextBlock Text="/10"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Główne Postacie: "/>
-                                <TextBlock Text="{Binding SelectedMovie.MainCharacters}" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Statek: "/>
-                                <TextBlock Text="{Binding SelectedMovie.Ship}" />
-                        </StackPanel>
-                    </StackPanel>
-					<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-						<TextBlock Text="Postacie w Filmie:" FontSize="30" />
-					</StackPanel>
-        </StackPanel>
-        
+	<Grid Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+
+		<ListBox ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}" Grid.Column="0" Margin="30">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding TitlePolish}" TextWrapping="Wrap"/>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="30">
+			<StackPanel>
+				<TextBlock Text="Szczegóły Filmu:" FontSize="20" Margin="0,0,0,10"/>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Tytuł Oryginalny: "/>
+					<TextBlock Text="{Binding SelectedMovie.TitleOriginal}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Tytuł Polski: "/>
+					<TextBlock Text="{Binding SelectedMovie.TitlePolish}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Rok Premiery: "/>
+					<TextBlock Text="{Binding SelectedMovie.ReleaseDate}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Reżyser: "/>
+					<TextBlock Text="{Binding SelectedMovie.Director}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Scenarzysta: "/>
+					<TextBlock Text="{Binding SelectedMovie.Screenwriter}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Gatunek: "/>
+					<TextBlock Text="{Binding SelectedMovie.Genre}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Czas Trwania: "/>
+					<TextBlock Text="{Binding SelectedMovie.Time}" TextWrapping="Wrap"/>
+					<TextBlock Text=" min."/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Ocena: "/>
+					<TextBlock Text="{Binding SelectedMovie.Rating}" TextWrapping="Wrap"/>
+					<TextBlock Text="/10"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Główne Postacie: "/>
+					<TextBlock Text="{Binding SelectedMovie.MainCharacters}" TextWrapping="Wrap"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Statek: "/>
+					<TextBlock Text="{Binding SelectedMovie.Ship}" TextWrapping="Wrap"/>
+				</StackPanel>
+			</StackPanel>
+		</ScrollViewer>
+		<ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="30">
+			<ItemsControl ItemsSource="{Binding SelectedMovieCharacters}" HorizontalAlignment="Stretch">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid Margin="20" HorizontalAlignment="Stretch">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+
+							<TextBlock Text="Imię: " Grid.Row="0" Grid.Column="0"/>
+							<TextBlock Text="{Binding Name}" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Rola: " Grid.Row="1" Grid.Column="0"/>
+							<TextBlock Text="{Binding Role}" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Zagrany/a Przez: " Grid.Row="2" Grid.Column="0"/>
+							<TextBlock Text="{Binding Actor}" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Rasa: " Grid.Row="3" Grid.Column="0"/>
+							<TextBlock Text="{Binding Race}" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Urodzony/a: " Grid.Row="4" Grid.Column="0"/>
+							<TextBlock Text="{Binding BirthDate}" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Funkcja: " Grid.Row="5" Grid.Column="0"/>
+							<TextBlock Text="{Binding Function}" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Opis: " Grid.Row="6" Grid.Column="0"/>
+							<TextBlock Text="{Binding Characteristics}" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Los: " Grid.Row="7" Grid.Column="0"/>
+							<TextBlock Text="{Binding Fate}" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+
+							<TextBlock Text="Ciekawostka: " Grid.Row="8" Grid.Column="0"/>
+							<TextBlock Text="{Binding FunFact}" Grid.Row="8" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Stretch"/>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+	</Grid>
 </Window>

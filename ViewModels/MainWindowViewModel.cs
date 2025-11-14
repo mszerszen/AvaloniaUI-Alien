@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Linq;
 using lekcja7.Models;
 using ReactiveUI;
 
@@ -101,8 +102,8 @@ public class MainWindowViewModel : ViewModelBase
             FunFact = "Film pierwotnie miał być zatytułowany „Paradise Lost”, a reżyser planował jeszcze jedną część łączącą fabułę z oryginalnym „Obcym” z 1979 roku."
         }
     };
-    public ObservableCollection<Character> Characters { get; } = new()
-    {
+    public Character[] Characters =
+    [
         new Character()
         {
             Name = "Ellen Louise Ripley",
@@ -254,12 +255,25 @@ public class MainWindowViewModel : ViewModelBase
             Fate = "Zostaje uśpiona w kapsule przez Davida, który podszywa się pod androida Waltera.",
             FunFact = "Scott chciał, by Daniels była symbolicznym „nowym początkiem” linii bohaterek."
         }
-    };
+    ];
     
     private Movie? _selectedMovie;
     public Movie? SelectedMovie
     {
         get => _selectedMovie;
-        set => this.RaiseAndSetIfChanged(ref _selectedMovie, value);
+        set
+        {
+            this.RaiseAndSetIfChanged(ref _selectedMovie, value);
+            this.RaisePropertyChanged(nameof(SelectedMovieCharacters));
+        }
+    }
+
+    public ObservableCollection<Character> SelectedMovieCharacters
+    {
+        get {
+            return new ObservableCollection<Character>(
+                Characters.Where(c => c.Movies.Contains($"{_selectedMovie?.TitleOriginal} ({_selectedMovie?.ReleaseDate})"))
+            );
+        }
     }
 }

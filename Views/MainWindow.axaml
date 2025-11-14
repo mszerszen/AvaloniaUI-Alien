@@ -12,8 +12,8 @@
                 <vm:MainWindowViewModel/>
         </Design.DataContext>
         
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30">
-                <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
                         <ListBox ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}">
                                 <ListBox.ItemTemplate>
                                         <DataTemplate>
@@ -22,54 +22,54 @@
                                 </ListBox.ItemTemplate>
                         </ListBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="30">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                                <TextBlock Text="Szczegóły Filmu:" FontSize="30" />
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Tytuł Oryginalny: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.TitleOriginal}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Tytuł Polski: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.TitlePolish}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Rok Premiery: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.ReleaseDate}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Reżyser: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.Director}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Scenarzysta: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.Screenwriter}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Gatunek: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.Genre}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Czas Trwania: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.Time}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Ocena: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.Rating}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Główne Postacie: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.MainCharacters}" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Statek: "/>
-                                        <TextBlock Text="{Binding SelectedMovie.Ship}" />
-                                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+                        <TextBlock Text="Szczegóły Filmu:" FontSize="30" />
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Tytuł Oryginalny: "/>
+                                <TextBlock Text="{Binding SelectedMovie.TitleOriginal}" />
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
-                                
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Tytuł Polski: "/>
+                                <TextBlock Text="{Binding SelectedMovie.TitlePolish}" />
                         </StackPanel>
-                </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Rok Premiery: "/>
+                                <TextBlock Text="{Binding SelectedMovie.ReleaseDate}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Reżyser: "/>
+                                <TextBlock Text="{Binding SelectedMovie.Director}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Scenarzysta: "/>
+                                <TextBlock Text="{Binding SelectedMovie.Screenwriter}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Gatunek: "/>
+                                <TextBlock Text="{Binding SelectedMovie.Genre}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Czas Trwania: "/>
+                                <TextBlock Text="{Binding SelectedMovie.Time}" />
+								<TextBlock Text="min."/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Ocena: "/>
+                                <TextBlock Text="{Binding SelectedMovie.Rating}" />
+								<TextBlock Text="/10"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Główne Postacie: "/>
+                                <TextBlock Text="{Binding SelectedMovie.MainCharacters}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Statek: "/>
+                                <TextBlock Text="{Binding SelectedMovie.Ship}" />
+                        </StackPanel>
+                    </StackPanel>
+					<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+						<TextBlock Text="Postacie w Filmie:" FontSize="30" />
+					</StackPanel>
         </StackPanel>
         
 </Window>

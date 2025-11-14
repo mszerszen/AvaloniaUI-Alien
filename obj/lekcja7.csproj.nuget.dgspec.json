@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj": {}
+    "C:\\Users\\marce\\Documents\\Pliki\\Projekty Szkolne\\Alien\\lekcja7.csproj": {}
   },
   "projects": {
-    "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj": {
+    "C:\\Users\\marce\\Documents\\Pliki\\Projekty Szkolne\\Alien\\lekcja7.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj",
+        "projectUniqueName": "C:\\Users\\marce\\Documents\\Pliki\\Projekty Szkolne\\Alien\\lekcja7.csproj",
         "projectName": "lekcja7",
-        "projectPath": "/home/marceli/Documents/C#/lekcja7/lekcja7.csproj",
-        "packagesPath": "/home/marceli/.nuget/packages/",
-        "outputPath": "/home/marceli/Documents/C#/lekcja7/obj/",
+        "projectPath": "C:\\Users\\marce\\Documents\\Pliki\\Projekty Szkolne\\Alien\\lekcja7.csproj",
+        "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marce\\Documents\\Pliki\\Projekty Szkolne\\Alien\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/marceli/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -86,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
